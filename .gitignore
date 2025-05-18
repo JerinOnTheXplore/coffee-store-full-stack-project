@@ -1,0 +1,4 @@
+node_modules/
+coffee-store-client/node_modules/
+coffee-store-server/node_modules/
+.env
