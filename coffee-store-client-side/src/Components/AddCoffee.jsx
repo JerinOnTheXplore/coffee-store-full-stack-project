@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
 
@@ -19,7 +20,17 @@ const AddCoffee = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log('After adding coffee to database',data)
+        if(data.insertedId){
+            console.log('added successfully')
+            Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Coffee added successfully!",
+            text: "Your new coffee has been saved.",
+            showConfirmButton: false,
+            timer: 1500
+});
+        }
     })
 
     }
